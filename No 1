@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+
+// Fungsi untuk mencari nilai terkecil dalam array
+int cariNilaiTerkecil(int arr[], int size) {
+    int nilaiTerkecil = arr[0]; // Anggap nilai pertama sebagai nilai terkecil
+
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < nilaiTerkecil) {
+            nilaiTerkecil = arr[i]; // Perbarui nilai terkecil jika menemukan nilai yang lebih kecil
+        }
+    }
+
+    return nilaiTerkecil;
+}
+
+// Fungsi untuk mencari index nilai terkecil dalam array
+int cariIndexNilaiTerkecil(int arr[], int size) {
+    int nilaiTerkecil = arr[0]; // Anggap nilai pertama sebagai nilai terkecil
+    int indexNilaiTerkecil = 0;
+
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < nilaiTerkecil) {
+            nilaiTerkecil = arr[i]; // Perbarui nilai terkecil jika menemukan nilai yang lebih kecil
+            indexNilaiTerkecil = i; // Perbarui index nilai terkecil
+        }
+    }
+
+    return indexNilaiTerkecil;
+}
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    int nilaiTerkecil = cariNilaiTerkecil(arr, size);
+    int indexNilaiTerkecil = cariIndexNilaiTerkecil(arr, size);
+
+    std::cout << "Nilai terkecil: " << nilaiTerkecil << std::endl;
+    std::cout << "Index nilai terkecil: " << indexNilaiTerkecil << std::endl;
+
+    return 0;
+}
